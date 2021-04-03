@@ -1,0 +1,80 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/03/a/Register.hdl
+
+/**
+ * 16-bit register:
+ * If load[t] == 1 then out[t+1] = in[t]
+ * else out does not change
+ */
+
+CHIP Register {
+    IN in[16], load;
+    OUT out[16];
+
+    PARTS:
+
+    /** 
+    if (load [t] == 1) {
+        out[t+1] == in [t]
+    } else {
+        out[t+1] == out [t] (same thing)
+    }
+    **/
+
+    // by doing [0], [1]... i am indexing a bit from the 16 bit bus
+    // we can use the bit gate, and index each value of the input and output value
+    // furthermore, considering it sequential we need to make our way back to front
+    // this therefore, allows a new update outputted values
+
+
+    // 1st bit (targetting the 1st in bit)
+    Bit(in=in[0], load=load, out=out[0]);
+
+    // 2nd bit (targetting the 2nd in bit)
+    Bit(in=in[1], load=load, out=out[1]);
+
+    // 3rd bit (targetting the 3rd in bit)
+    Bit(in=in[2], load=load, out=out[2]);
+
+    // 4th bit (targetting the 4th in bit)
+    Bit(in=in[3], load=load, out=out[3]);
+
+    // 5th bit (targeting the 5th in bit)
+    Bit(in=in[4], load=load, out=out[4]);
+
+    // 6th bit (targetting the 6th in bit)
+    Bit(in=in[5], load=load, out=out[5]);
+
+    // 7th bit (targetting the 7th in bit)
+    Bit(in=in[6], load=load, out=out[6]);
+
+    // 8th bit (targetting the 8th in bit)
+    Bit(in=in[7], load=load, out=out[7]);
+
+    // 9th bit (targetting the 9th in bit)
+    Bit(in=in[8], load=load, out=out[8]);
+
+    // 10th bit (targetting the 10th in bit)
+    Bit(in=in[9], load=load, out=out[9]);
+
+    // 11th bit (targetting the 11th in bit)
+    Bit(in=in[10], load=load, out=out[10]);
+
+    // 12th bit (targetting the 12th in bit)
+    Bit(in=in[11], load=load, out=out[11]);
+
+    // 13th bit (targetting the 13th in bit)
+    Bit(in=in[12], load=load, out=out[12]);
+
+    // 14th bit (targetting the 14th in bit)
+    Bit(in=in[13], load=load, out=out[13]);
+
+    // 15th bit (targetting the 15th in bit)
+    Bit(in=in[14], load=load, out=out[14]);
+
+    // 16th bit (targetting the 16th in bit)
+    Bit(in=in[15], load=load, out=out[15]);
+ 
+}
